@@ -3,12 +3,7 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initScrollAnimations();
-  initNavigation();
-  initTabs();
-  initPdfDownload();
-  initParticles();
-  setStaggerIndices();
+  initLogin();
 });
 
 /* --- SCROLL ANIMATIONS (Intersection Observer) --- */
@@ -178,4 +173,60 @@ function initParticles() {
 
 function rand() {
   return Math.floor(Math.random() * 80 - 40);
+}
+
+/* --- LOGIN LOGIC --- */
+function initLogin() {
+  const overlay = document.getElementById('loginOverlay');
+  const form = document.getElementById('loginForm');
+  const errorMsg = document.getElementById('loginError');
+  const card = document.querySelector('.login-card');
+
+  // Check sessionStorage
+  if (sessionStorage.getItem('fgi_proposal_authenticated') === 'true') {
+    if (overlay) overlay.style.display = 'none';
+    document.body.classList.remove('login-active');
+    revealProposal();
+    return;
+  }
+
+  // Handle submit
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+
+      if ((user.toLowerCase() === 'fgi' || user.toLowerCase() === 'fgi@dynamicflowit.com') && pass === 'fgi2026') {
+        // Authenticated!
+        sessionStorage.setItem('fgi_proposal_authenticated', 'true');
+        
+        // Visual effects for unlock
+        overlay.classList.add('fade-out');
+        document.body.classList.remove('login-active');
+
+        // Animate out and clean up DOM after transition
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          revealProposal();
+        }, 800);
+      } else {
+        // Error
+        errorMsg.textContent = 'Invalid credentials. Please check and try again.';
+        if (card) {
+          card.classList.add('shake');
+          setTimeout(() => card.classList.remove('shake'), 400);
+        }
+      }
+    });
+  }
+}
+
+function revealProposal() {
+  initScrollAnimations();
+  initNavigation();
+  initTabs();
+  initPdfDownload();
+  initParticles();
+  setStaggerIndices();
 }

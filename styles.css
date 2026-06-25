@@ -1752,6 +1752,253 @@ main {
 }
 
 /* ============================================
+   LOGIN OVERLAY STYLES
+   ============================================ */
+body.login-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.login-active #proposalContent,
+body.login-active #mainNav,
+body.login-active #navToggle,
+body.login-active #downloadPdf {
+  filter: blur(10px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #030307;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Looping Aurora Background Animation */
+.login-bg-aurora {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(201, 168, 76, 0.12) 0%, transparent 40%),
+              radial-gradient(circle at 70% 60%, rgba(138, 43, 226, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 40% 80%, rgba(0, 206, 209, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 35%);
+  animation: aurora-shift 25s ease-in-out infinite alternate;
+  z-index: 1;
+  filter: blur(80px);
+}
+
+@keyframes aurora-shift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-5%, 8%) rotate(90deg) scale(1.1);
+  }
+  100% {
+    transform: translate(8%, -5%) rotate(180deg) scale(0.95);
+  }
+}
+
+.login-card-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.login-card {
+  background: rgba(13, 13, 23, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(201, 168, 76, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light beam effect on the card border */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), transparent 40%, transparent 60%, rgba(255, 255, 255, 0.05));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  height: 54px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.2));
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.input-group input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s var(--ease);
+}
+
+.input-group input:focus {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.03);
+  box-shadow: 0 0 16px rgba(201, 168, 76, 0.15);
+}
+
+.login-error-message {
+  color: #ff4a4a;
+  font-size: 13px;
+  min-height: 20px;
+  text-align: center;
+  transition: all 0.3s var(--ease);
+  font-weight: 500;
+}
+
+.login-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.2);
+  transition: all 0.3s var(--ease);
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(201, 168, 76, 0.35);
+}
+
+.login-submit-btn:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  transition: transform 0.3s var(--ease);
+}
+
+.login-submit-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.login-hint {
+  margin-top: 24px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.login-hint p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.hint-code {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  background: rgba(201, 168, 76, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Class to handle fade-out of overlay */
+.login-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.02);
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* ============================================
    PRINT / PDF STYLES
    ============================================ */
 @media print {

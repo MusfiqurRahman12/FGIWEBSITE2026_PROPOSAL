@@ -126,71 +126,7 @@ function initTabs() {
 
 /* --- PDF DOWNLOAD --- */
 function initPdfDownload() {
-  const btn = document.getElementById('downloadPdf');
-  if (!btn) return;
-
-  btn.addEventListener('click', async () => {
-    btn.classList.add('generating');
-    const originalText = btn.querySelector('span').textContent;
-    btn.querySelector('span').textContent = 'Generating';
-
-    try {
-      const element = document.getElementById('proposalContent');
-
-      // Temporarily show all tab contents for PDF
-      const tabContents = document.querySelectorAll('.tab-content');
-      const tabButtons = document.querySelector('.tab-buttons');
-      tabContents.forEach((tc) => (tc.style.display = 'block'));
-      if (tabButtons) tabButtons.style.display = 'none';
-
-      // Make all animations visible
-      document.querySelectorAll('.animate-in').forEach((el) => {
-        el.classList.add('visible');
-      });
-
-      const opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'FGI_Technical_Proposal_Dynamicflow.pdf',
-        image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: {
-          scale: 1,
-          useCORS: true,
-          logging: false,
-          letterRendering: true,
-          backgroundColor: '#08080d',
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait',
-        },
-        pagebreak: {
-          mode: ['avoid-all', 'css', 'legacy'],
-          before: ['#requirements', '#stack', '#architecture', '#crm', '#modules', '#timeline', '#team', '#training', '#support', '#cost', '#security', '#why-us'],
-        },
-      };
-
-      await html2pdf().set(opt).from(element).save();
-
-      // Restore tab state
-      tabContents.forEach((tc) => (tc.style.display = ''));
-      if (tabButtons) tabButtons.style.display = '';
-      // Re-activate correct tab
-      const activeBtn = document.querySelector('.tab-btn.active');
-      if (activeBtn) {
-        const tabId = activeBtn.getAttribute('data-tab');
-        tabContents.forEach((c) => c.classList.remove('active'));
-        const target = document.getElementById(`tab-${tabId}`);
-        if (target) target.classList.add('active');
-      }
-    } catch (error) {
-      console.error('PDF generation failed:', error);
-      alert('PDF generation failed. Please try using your browser\'s Print to PDF (Ctrl+P) as a fallback.');
-    }
-
-    btn.classList.remove('generating');
-    btn.querySelector('span').textContent = originalText;
-  });
+  // Direct file download handled natively by anchor tag in HTML
 }
 
 /* --- FLOATING PARTICLES --- */

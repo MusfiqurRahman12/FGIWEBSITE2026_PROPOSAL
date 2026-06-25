@@ -234,6 +234,7 @@ code {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 14px;
+  text-decoration: none;
   border: none;
   border-radius: 50px;
   cursor: pointer;

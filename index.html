@@ -581,16 +581,19 @@
             <div class="workflow-visual">
               <div class="wf-step"><span class="wf-num">1</span>Application<br/><small>Form + file upload</small></div>
               <div class="wf-arrow">→</div>
-              <div class="wf-step"><span class="wf-num">2</span>Review<br/><small>HQ admin queue</small></div>
+              <div class="wf-step"><span class="wf-num">2</span>Confirmation<br/><small>Email verification</small></div>
               <div class="wf-arrow">→</div>
-              <div class="wf-step"><span class="wf-num">3</span>Decision<br/><small>Approve / Reject</small></div>
+              <div class="wf-step"><span class="wf-num">3</span>Review<br/><small>HQ admin queue</small></div>
               <div class="wf-arrow">→</div>
-              <div class="wf-step"><span class="wf-num">4</span>Payment<br/><small>Stripe checkout</small></div>
+              <div class="wf-step"><span class="wf-num">4</span>Decision<br/><small>Approve / Reject</small></div>
               <div class="wf-arrow">→</div>
-              <div class="wf-step wf-step-final"><span class="wf-num">5</span>Active<br/><small>Welcome sequence</small></div>
+              <div class="wf-step"><span class="wf-num">5</span>Payment<br/><small>Stripe checkout</small></div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step wf-step-final"><span class="wf-num">6</span>Active<br/><small>Welcome sequence</small></div>
             </div>
             <ul class="feature-bullets">
               <li>Multi-step application form with document uploads</li>
+              <li>Automated email confirmation and email verification process</li>
               <li>Admin approval queue with bulk actions</li>
               <li>Configurable tiers — HQ admins add new tiers without developers</li>
               <li>Renewal pipeline: 90/60/30/7-day reminders → auto-charge → grace → lapse</li>

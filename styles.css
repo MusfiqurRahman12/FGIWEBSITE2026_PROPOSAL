@@ -2024,8 +2024,23 @@ body.login-active #downloadPdf {
   .nav-toggle,
   .pdf-btn,
   .hero-particles,
-  .hero-scroll-cta {
+  .hero-scroll-cta,
+  .login-overlay {
     display: none !important;
+  }
+
+  body.login-active #proposalContent,
+  body.login-active #mainNav,
+  body.login-active #navToggle,
+  body.login-active #downloadPdf {
+    filter: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  body.login-active {
+    overflow: visible !important;
+    height: auto !important;
   }
 
   main { margin-left: 0; }

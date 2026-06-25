@@ -407,16 +407,17 @@ Salesforce is the industry standard but **significantly more expensive** ($36–
 **Workflow:**
 
 ```
-Application --> Review Queue --> Approval/Rejection --> Payment --> Activation
-     |              |                |                  |          |
-     v              v                v                  v          v
-  Form w/        HQ Admin         Email            Stripe      Welcome
-  file upload    dashboard        notification     checkout    sequence
-                                                               (HubSpot)
+Application --> Email Confirm --> Review Queue --> Approval/Rejection --> Payment --> Activation
+     |               |                 |                |                  |          |
+     v               v                 v                v                  v          v
+  Form w/        Verification      HQ Admin         Email            Stripe      Welcome
+  file upload    link email        dashboard        notification     checkout    sequence
+                                                                                 (HubSpot)
 ```
 
 **Key Implementation Details:**
 * Multi-step application form with document uploads (resume, company info).
+* Automated email confirmation and verification process to prevent spam and validate email addresses.
 * Admin approval queue with bulk actions (approve, reject, request info).
 * Configurable membership tiers — HQ admins add new tiers via admin panel without developer involvement.
 * Automated renewal pipeline: 90/60/30/7-day reminders, auto-charge (if enabled), grace period, lapse.

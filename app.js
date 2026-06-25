@@ -150,7 +150,7 @@ function initPdfDownload() {
 
       const opt = {
         margin: [10, 10, 10, 10],
-        filename: 'FGI_Technical_Proposal_DynamicFlow.pdf',
+        filename: 'FGI_Technical_Proposal_Dynamicflow.pdf',
         image: { type: 'jpeg', quality: 0.95 },
         html2canvas: {
           scale: 2,

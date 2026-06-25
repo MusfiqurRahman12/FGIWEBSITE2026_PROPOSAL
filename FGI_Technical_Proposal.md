@@ -2,7 +2,7 @@
 
 **Prepared for:** Fashion Group International (FGI)
 **Attn:** Maryanne Grisz, President & CEO
-**Prepared by:** DynamicFlow Digital Solutions
+**Prepared by:** Dynamicflow
 **Date:** June 25, 2026
 **RFP Deadline:** June 30, 2027
 
@@ -22,7 +22,7 @@
 10. [Ongoing Support & Maintenance](#10-ongoing-support--maintenance)
 11. [Cost Proposal](#11-cost-proposal)
 12. [Security, Compliance & Risk Mitigation](#12-security-compliance--risk-mitigation)
-13. [Why DynamicFlow](#13-why-dynamicflow)
+13. [Why Dynamicflow](#13-why-dynamicflow)
 
 ---
 
@@ -709,7 +709,7 @@ Month 12      | UAT, Training & Launch
 
 ---
 
-## 13. Why DynamicFlow
+## 13. Why Dynamicflow
 
 ### Our Differentiators
 
@@ -729,5 +729,6 @@ Month 12      | UAT, Training & Launch
 
 *This proposal is valid for 90 days from the date of submission. We welcome the opportunity to present this proposal in person and answer any questions.*
 
-**DynamicFlow Digital Solutions**
+**Dynamicflow**
 *Building Digital Ecosystems for Impact Organizations*
+[dynamicflowit.com](https://dynamicflowit.com)

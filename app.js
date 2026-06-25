@@ -212,6 +212,7 @@ function initLogin() {
         }, 800);
       } else {
         // Error
+        errorMsg.style.color = '#ff4a4a';
         errorMsg.textContent = 'Invalid credentials. Please check and try again.';
         if (card) {
           card.classList.add('shake');
@@ -229,4 +230,88 @@ function revealProposal() {
   initPdfDownload();
   initParticles();
   setStaggerIndices();
+  initLogout();
+  initIdleTimer();
+}
+
+/* --- LOGOUT & SESSION TIMEOUT LOGIC --- */
+let idleTimer = null;
+const IDLE_TIMEOUT_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
+
+function initLogout() {
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      performLogout(false);
+    });
+  }
+}
+
+function performLogout(isIdle = false) {
+  // Clear auth session flag
+  sessionStorage.removeItem('fgi_proposal_authenticated');
+
+  // Clear idle timers and events
+  clearTimeout(idleTimer);
+  removeIdleListeners();
+
+  // Reset page state to show overlay
+  const overlay = document.getElementById('loginOverlay');
+  if (overlay) {
+    overlay.style.display = 'flex';
+    // Small delay to allow display flex to apply before opacity transition
+    setTimeout(() => {
+      overlay.classList.remove('fade-out');
+    }, 10);
+  }
+  document.body.classList.add('login-active');
+
+  // Show status message
+  const errorMsg = document.getElementById('loginError');
+  const form = document.getElementById('loginForm');
+  if (form) form.reset();
+
+  if (errorMsg) {
+    if (isIdle) {
+      errorMsg.style.color = '#c9a84c'; // gold warning color
+      errorMsg.textContent = 'Logged out automatically due to inactivity.';
+    } else {
+      errorMsg.style.color = '#ff4a4a'; // default error/logout color
+      errorMsg.textContent = 'Logged out successfully.';
+    }
+  }
+}
+
+function initIdleTimer() {
+  // Reset timer on user activity
+  const resetTimer = () => {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+      performLogout(true);
+    }, IDLE_TIMEOUT_DURATION);
+  };
+
+  // Add listeners
+  const activityEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+  activityEvents.forEach((event) => {
+    document.addEventListener(event, resetTimer, { passive: true });
+  });
+
+  // Keep a reference to remove them on logout
+  window.idleResetTimer = resetTimer;
+  window.idleEvents = activityEvents;
+
+  // Initialize
+  resetTimer();
+}
+
+function removeIdleListeners() {
+  if (window.idleResetTimer && window.idleEvents) {
+    window.idleEvents.forEach((event) => {
+      document.removeEventListener(event, window.idleResetTimer);
+    });
+    delete window.idleResetTimer;
+    delete window.idleEvents;
+  }
 }

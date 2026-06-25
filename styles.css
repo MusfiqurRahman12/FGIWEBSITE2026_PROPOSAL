@@ -293,10 +293,7 @@ main {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(74, 142, 255, 0.04) 0%, transparent 50%),
-    var(--bg-primary);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.08) 0%, rgba(8, 8, 13, 0) 70%), var(--bg-primary);
 }
 
 .hero-particles {

@@ -153,7 +153,7 @@ function initPdfDownload() {
         filename: 'FGI_Technical_Proposal_Dynamicflow.pdf',
         image: { type: 'jpeg', quality: 0.95 },
         html2canvas: {
-          scale: 2,
+          scale: 1,
           useCORS: true,
           logging: false,
           letterRendering: true,

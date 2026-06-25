@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FGI Digital Ecosystem — Technical Proposal | DynamicFlow</title>
+  <meta name="description" content="Technical Proposal for Fashion Group International's Website, Membership Platform & Digital Community Ecosystem by DynamicFlow Digital Solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== FLOATING PDF BUTTON ===== -->
+  <button id="downloadPdf" class="pdf-btn" aria-label="Download PDF">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    <span>Download PDF</span>
+  </button>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="mainNav" class="side-nav">
+    <div class="nav-brand">
+      <span class="brand-mark">DF</span>
+      <span class="brand-text">DynamicFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active" data-section="hero">Cover</a></li>
+      <li><a href="#executive" data-section="executive">Executive Summary</a></li>
+      <li><a href="#requirements" data-section="requirements">Requirements</a></li>
+      <li><a href="#stack" data-section="stack">Tech Stack</a></li>
+      <li><a href="#architecture" data-section="architecture">Architecture</a></li>
+      <li><a href="#crm" data-section="crm">CRM</a></li>
+      <li><a href="#modules" data-section="modules">Modules</a></li>
+      <li><a href="#timeline" data-section="timeline">Timeline</a></li>
+      <li><a href="#team" data-section="team">Team</a></li>
+      <li><a href="#training" data-section="training">Training</a></li>
+      <li><a href="#support" data-section="support">Support</a></li>
+      <li><a href="#cost" data-section="cost">Cost</a></li>
+      <li><a href="#security" data-section="security">Security</a></li>
+      <li><a href="#why-us" data-section="why-us">Why Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MOBILE NAV TOGGLE ===== -->
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="proposalContent">
+
+    <!-- HERO / COVER -->
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-label animate-in">Technical Proposal</p>
+        <h1 class="hero-title animate-in">
+          FGI Digital<br/>
+          <span class="text-gold">Ecosystem</span>
+        </h1>
+        <p class="hero-subtitle animate-in">Website, Membership Platform & Digital Community</p>
+        <div class="hero-meta animate-in">
+          <div class="meta-item">
+            <span class="meta-label">Prepared For</span>
+            <span class="meta-value">Fashion Group International</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">June 25, 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Prepared By</span>
+            <span class="meta-value">DynamicFlow Digital Solutions</span>
+          </div>
+        </div>
+        <a href="#executive" class="hero-scroll-cta animate-in">
+          <span>Explore Proposal</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+      <div class="hero-particles" id="particles"></div>
+    </section>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <section id="executive" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">01</span>
+          <h2 class="section-title">Executive Summary</h2>
+          <p class="section-desc">A modern, headless architecture delivering a premium editorial experience worthy of a 95-year-old fashion institution.</p>
+        </div>
+
+        <div class="cards-grid animate-in">
+          <div class="glass-card card-highlight">
+            <div class="card-icon">🎨</div>
+            <h3>Fashion-Forward Website</h3>
+            <p>Visually stunning design reflecting FGI's prestige in the fashion, beauty & creative industries.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">👥</div>
+            <h3>Unified Membership</h3>
+            <p>9 membership tiers with automated workflows, renewals, invoicing & role-based access.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">🎫</div>
+            <h3>Events Engine</h3>
+            <p>Smart pricing, sponsorship tools, QR ticketing & attendance analytics — fully integrated.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">🎓</div>
+            <h3>Student Ecosystem</h3>
+            <p>Club management with graduation-to-professional transition automation.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">🏛️</div>
+            <h3>Governance Portal</h3>
+            <p>Board, regional directors & HQ workspace with compliance tracking and deadline management.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">📊</div>
+            <h3>Enterprise Analytics</h3>
+            <p>Real-time KPI dashboards across membership, events, revenue & regional participation.</p>
+          </div>
+        </div>
+
+        <!-- KEY DECISIONS TABLE -->
+        <div class="table-wrapper animate-in">
+          <h3 class="subsection-title">Key Architectural Decisions</h3>
+          <table class="premium-table">
+            <thead>
+              <tr><th>Decision</th><th>Rationale</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Next.js 15</strong></td><td>SSR for SEO, React Server Components for performance, image optimization for media-heavy content</td></tr>
+              <tr><td><strong>Strapi 5 CMS</strong></td><td>Open-source, self-hosted, no per-seat fees — nonprofit-friendly</td></tr>
+              <tr><td><strong>NestJS API</strong></td><td>Type-safe, modular back-end aligned across full TypeScript stack</td></tr>
+              <tr><td><strong>PostgreSQL + Redis</strong></td><td>Relational integrity for membership data, Redis for session caching</td></tr>
+              <tr><td><strong>Stripe Connect</strong></td><td>PCI-DSS Level 1 compliant; memberships, events, invoicing, recurring billing</td></tr>
+              <tr><td><strong>HubSpot CRM</strong></td><td>Free tier for nonprofits; native email marketing & segmentation</td></tr>
+              <tr><td><strong>AWS Cloud</strong></td><td>SOC 2 compliant; scales from current traffic to 10× without re-architecture</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section id="requirements" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">02</span>
+          <h2 class="section-title">Understanding of Requirements</h2>
+          <p class="section-desc">Seven functional domains, fully mapped to your RFP.</p>
+        </div>
+
+        <!-- ECOSYSTEM DIAGRAM -->
+        <div class="ecosystem-diagram animate-in">
+          <div class="eco-title">FGI Digital Ecosystem</div>
+          <div class="eco-row eco-modules">
+            <div class="eco-block">Public Website</div>
+            <div class="eco-block">Member Platform</div>
+            <div class="eco-block">Events & Tickets</div>
+            <div class="eco-block">Student Clubs</div>
+            <div class="eco-block">Governance</div>
+          </div>
+          <div class="eco-row eco-engine">
+            <div class="eco-block eco-wide">Communications & Analytics Engine</div>
+          </div>
+          <div class="eco-row eco-services">
+            <div class="eco-block eco-wide">Shared Services — Auth · Payments · CRM</div>
+          </div>
+        </div>
+
+        <!-- TRACEABILITY MATRIX -->
+        <div class="table-wrapper animate-in">
+          <h3 class="subsection-title">Requirements Traceability Matrix</h3>
+          <div class="table-scroll">
+            <table class="premium-table compact">
+              <thead>
+                <tr><th>RFP Requirement</th><th>Proposed Solution</th><th>Module</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Visually sophisticated design</td><td>Next.js + Framer Motion + custom design system</td><td><span class="badge badge-blue">Website</span></td></tr>
+                <tr><td>Mobile-responsive, ADA compliant</td><td>Responsive CSS + WCAG 2.1 AA audit</td><td><span class="badge badge-blue">Website</span></td></tr>
+                <tr><td>SEO optimized</td><td>SSR + structured data + sitemap generation</td><td><span class="badge badge-blue">Website</span></td></tr>
+                <tr><td>Video/media integration</td><td>Cloudinary CDN + embedded video players</td><td><span class="badge badge-blue">Website</span></td></tr>
+                <tr><td>14 public pages + regional directory</td><td>Next.js dynamic pages + Strapi collections</td><td><span class="badge badge-blue">Website</span></td></tr>
+                <tr><td>Online membership applications</td><td>Multi-step forms with approval workflows</td><td><span class="badge badge-purple">Membership</span></td></tr>
+                <tr><td>9 membership levels with RBAC</td><td>Role-based middleware + permission matrix</td><td><span class="badge badge-purple">Membership</span></td></tr>
+                <tr><td>Payment processing</td><td>Stripe Connect + Stripe Billing</td><td><span class="badge badge-purple">Membership</span></td></tr>
+                <tr><td>Automated reminders & renewals</td><td>NestJS cron jobs + email triggers</td><td><span class="badge badge-purple">Membership</span></td></tr>
+                <tr><td>Searchable member directory</td><td>Elasticsearch with privacy controls</td><td><span class="badge badge-green">Portal</span></td></tr>
+                <tr><td>Role-based dashboards</td><td>Custom React dashboards per tier</td><td><span class="badge badge-green">Portal</span></td></tr>
+                <tr><td>Event registration with smart pricing</td><td>Membership-aware pricing engine</td><td><span class="badge badge-amber">Events</span></td></tr>
+                <tr><td>Student club management</td><td>Club registration + advisor workflows</td><td><span class="badge badge-pink">Student</span></td></tr>
+                <tr><td>Governance documents</td><td>Versioned repository + submission tracking</td><td><span class="badge badge-teal">Governance</span></td></tr>
+                <tr><td>Targeted email/newsletters</td><td>HubSpot integration with segment sync</td><td><span class="badge badge-orange">Comms</span></td></tr>
+                <tr><td>PCI-compliant payments</td><td>Stripe (PCI-DSS Level 1)</td><td><span class="badge badge-red">Security</span></td></tr>
+                <tr><td>SSO & API integration</td><td>NextAuth.js + OAuth 2.0 / SAML</td><td><span class="badge badge-red">Security</span></td></tr>
+                <tr><td>GDPR & privacy compliance</td><td>Consent management + data deletion APIs</td><td><span class="badge badge-red">Security</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="stack" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">03</span>
+          <h2 class="section-title">Recommended Technology Stack</h2>
+          <p class="section-desc">Full-stack TypeScript — one language, one team, database to UI.</p>
+        </div>
+
+        <!-- STACK LAYERS -->
+        <div class="stack-layers animate-in">
+          <!-- FRONT-END -->
+          <div class="stack-layer">
+            <div class="layer-header">
+              <span class="layer-icon">🖥️</span>
+              <h3>Front-End</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill pill-primary">Next.js 15</span>
+              <span class="tech-pill pill-primary">React 19</span>
+              <span class="tech-pill">TypeScript 5</span>
+              <span class="tech-pill">Framer Motion</span>
+              <span class="tech-pill">Radix UI</span>
+              <span class="tech-pill">CSS Modules</span>
+              <span class="tech-pill">React Hook Form</span>
+              <span class="tech-pill">TanStack Query</span>
+              <span class="tech-pill">Recharts</span>
+            </div>
+          </div>
+
+          <!-- BACK-END -->
+          <div class="stack-layer">
+            <div class="layer-header">
+              <span class="layer-icon">⚙️</span>
+              <h3>Back-End / API</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill pill-primary">NestJS 11</span>
+              <span class="tech-pill pill-primary">Prisma 6</span>
+              <span class="tech-pill">TypeScript 5</span>
+              <span class="tech-pill">Bull MQ</span>
+              <span class="tech-pill">Passport.js</span>
+              <span class="tech-pill">NextAuth</span>
+              <span class="tech-pill">Nodemailer</span>
+              <span class="tech-pill">PDFKit</span>
+            </div>
+          </div>
+
+          <!-- CMS -->
+          <div class="stack-layer">
+            <div class="layer-header">
+              <span class="layer-icon">📝</span>
+              <h3>Content Management</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill pill-primary">Strapi 5</span>
+              <span class="tech-pill">Cloudinary</span>
+              <span class="tech-pill">Strapi RBAC</span>
+              <span class="tech-pill">REST + GraphQL</span>
+            </div>
+          </div>
+
+          <!-- DATA -->
+          <div class="stack-layer">
+            <div class="layer-header">
+              <span class="layer-icon">💾</span>
+              <h3>Data Layer</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill pill-primary">PostgreSQL 16</span>
+              <span class="tech-pill pill-primary">Redis 7</span>
+              <span class="tech-pill pill-primary">Elasticsearch 8</span>
+              <span class="tech-pill">Cloudinary CDN</span>
+            </div>
+          </div>
+
+          <!-- INFRA -->
+          <div class="stack-layer">
+            <div class="layer-header">
+              <span class="layer-icon">☁️</span>
+              <h3>Infrastructure & DevOps</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill pill-primary">AWS ECS Fargate</span>
+              <span class="tech-pill pill-primary">AWS RDS</span>
+              <span class="tech-pill">ElastiCache</span>
+              <span class="tech-pill">S3 + CloudFront</span>
+              <span class="tech-pill">AWS SES</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">GitHub Actions</span>
+              <span class="tech-pill">Terraform</span>
+              <span class="tech-pill">Sentry</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHY NOT WORDPRESS -->
+        <div class="callout-box animate-in">
+          <h4>Why Next.js over WordPress / Drupal?</h4>
+          <ul>
+            <li>Fashion-forward sites demand <strong>pixel-perfect design control</strong> — template themes cannot deliver this.</li>
+            <li>SSR ensures Google indexes all content while delivering <strong>sub-second page loads</strong>.</li>
+            <li>React components enable <strong>reusable patterns</strong> across 14+ public pages and member portals.</li>
+            <li>Automatic image optimization (<code>next/image</code>) serves WebP/AVIF — critical for media-heavy content.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">04</span>
+          <h2 class="section-title">System Architecture</h2>
+          <p class="section-desc">Headless architecture with modular, domain-driven API design.</p>
+        </div>
+
+        <!-- FULL STACK DIAGRAM -->
+        <div class="arch-diagram animate-in">
+          <div class="arch-layer arch-clients">
+            <div class="arch-label">Clients</div>
+            <div class="arch-boxes">
+              <div class="arch-box">Browser (Desktop/Mobile)</div>
+              <div class="arch-box">Admin Panel</div>
+              <div class="arch-box arch-future">Mobile App (Future)</div>
+            </div>
+          </div>
+          <div class="arch-connector">▼</div>
+          <div class="arch-layer arch-cdn">
+            <div class="arch-label">CDN</div>
+            <div class="arch-boxes">
+              <div class="arch-box">AWS CloudFront</div>
+            </div>
+          </div>
+          <div class="arch-connector">▼</div>
+          <div class="arch-layer arch-app">
+            <div class="arch-label">Application</div>
+            <div class="arch-boxes">
+              <div class="arch-box arch-primary">Next.js 15 (SSR)<br/><small>Website · Portals</small></div>
+              <div class="arch-box arch-primary">Strapi 5 CMS<br/><small>Content API</small></div>
+            </div>
+          </div>
+          <div class="arch-connector">▼</div>
+          <div class="arch-layer arch-api">
+            <div class="arch-label">API Gateway — NestJS</div>
+            <div class="arch-boxes arch-grid-3">
+              <div class="arch-box arch-module">Auth Guard</div>
+              <div class="arch-box arch-module">Member Module</div>
+              <div class="arch-box arch-module">Events Module</div>
+              <div class="arch-box arch-module">Student Module</div>
+              <div class="arch-box arch-module">Governance Module</div>
+              <div class="arch-box arch-module">Comms Module</div>
+              <div class="arch-box arch-module">Payment Module</div>
+              <div class="arch-box arch-module">Search Module</div>
+              <div class="arch-box arch-module">Report Module</div>
+            </div>
+          </div>
+          <div class="arch-connector">▼</div>
+          <div class="arch-layer arch-data">
+            <div class="arch-label">Data</div>
+            <div class="arch-boxes">
+              <div class="arch-box arch-db">PostgreSQL<br/><small>Primary DB</small></div>
+              <div class="arch-box arch-db">Redis<br/><small>Cache</small></div>
+              <div class="arch-box arch-db">Elasticsearch<br/><small>Search</small></div>
+            </div>
+          </div>
+          <div class="arch-connector">▼</div>
+          <div class="arch-layer arch-external">
+            <div class="arch-label">External Services</div>
+            <div class="arch-boxes">
+              <div class="arch-box">Stripe</div>
+              <div class="arch-box">HubSpot</div>
+              <div class="arch-box">Cloudinary</div>
+              <div class="arch-box">AWS SES</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RBAC HIERARCHY -->
+        <div class="animate-in">
+          <h3 class="subsection-title">Role-Based Access Control (RBAC)</h3>
+          <div class="rbac-tree">
+            <div class="rbac-level rbac-admin">
+              <span>HQ Administrator</span>
+              <small>Full system access</small>
+            </div>
+            <div class="rbac-connector-multi"></div>
+            <div class="rbac-row">
+              <div class="rbac-level rbac-leadership"><span>Board Member</span></div>
+              <div class="rbac-level rbac-leadership"><span>Regional Director</span></div>
+              <div class="rbac-level rbac-leadership"><span>Committee Member</span></div>
+            </div>
+            <div class="rbac-connector-single"></div>
+            <div class="rbac-stack">
+              <div class="rbac-level rbac-enhanced"><span>Patron</span><small>Enhanced access</small></div>
+              <div class="rbac-level rbac-standard"><span>Corporate</span></div>
+              <div class="rbac-level rbac-standard"><span>Professional</span><small>Standard access</small></div>
+              <div class="rbac-level rbac-standard"><span>Emerging Professional</span></div>
+              <div class="rbac-level rbac-base"><span>Student</span><small>Base access</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENT FLOW -->
+        <div class="animate-in">
+          <h3 class="subsection-title">Payment Architecture</h3>
+          <div class="payment-flow">
+            <div class="flow-step"><div class="flow-icon">👤</div><span>Member Portal</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><div class="flow-icon">🛒</div><span>Checkout (Next.js)</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step flow-step-primary"><div class="flow-icon">💳</div><span>Stripe Connect</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><div class="flow-icon">🔔</div><span>Webhooks (NestJS)</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-results">
+              <div class="flow-result">✓ Update Status</div>
+              <div class="flow-result">✓ Generate Invoice</div>
+              <div class="flow-result">✓ Send Receipt</div>
+            </div>
+          </div>
+          <div class="capabilities-grid">
+            <div class="cap-item"><strong>Recurring billing</strong> — Stripe Subscriptions with auto-renewal</div>
+            <div class="cap-item"><strong>One-time payments</strong> — Event tickets, donations, sponsorships</div>
+            <div class="cap-item"><strong>Smart pricing</strong> — Auto member/non-member pricing</div>
+            <div class="cap-item"><strong>Membership upsell</strong> — "Save $X by joining" at checkout</div>
+            <div class="cap-item"><strong>Automated invoicing</strong> — PDF with FGI branding</div>
+            <div class="cap-item"><strong>Refunds & credits</strong> — Admin panel for partial/full refunds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRM -->
+    <section id="crm" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">05</span>
+          <h2 class="section-title">CRM Recommendation</h2>
+          <p class="section-desc">HubSpot Nonprofit Edition — powerful, cost-effective, and built for organizations like FGI.</p>
+        </div>
+
+        <div class="two-col animate-in">
+          <div class="col">
+            <h3 class="subsection-title">HubSpot CRM Benefits</h3>
+            <div class="feature-list">
+              <div class="feature-item"><span class="feature-check">✓</span><strong>Free CRM Core</strong> — unlimited contacts, no per-seat cost</div>
+              <div class="feature-item"><span class="feature-check">✓</span><strong>Nonprofit Discount</strong> — 40% off paid hubs</div>
+              <div class="feature-item"><span class="feature-check">✓</span><strong>Email Marketing</strong> — drag-and-drop builder, A/B testing</div>
+              <div class="feature-item"><span class="feature-check">✓</span><strong>Contact Segmentation</strong> — by tier, region, committee, student status</div>
+              <div class="feature-item"><span class="feature-check">✓</span><strong>Workflow Automation</strong> — renewals, welcome sequences, re-engagement</div>
+              <div class="feature-item"><span class="feature-check">✓</span><strong>API Integration</strong> — bi-directional sync via HubSpot API v3</div>
+            </div>
+          </div>
+          <div class="col">
+            <h3 class="subsection-title">Integration Flow</h3>
+            <div class="crm-flow">
+              <div class="crm-step">
+                <div class="crm-step-header">1. New Member Created</div>
+                <div class="crm-step-body">FGI Back-End (NestJS)</div>
+              </div>
+              <div class="crm-arrow">↓ Webhook Sync</div>
+              <div class="crm-step">
+                <div class="crm-step-header">2. Contact Created + Tagged</div>
+                <div class="crm-step-body">HubSpot CRM</div>
+              </div>
+              <div class="crm-arrow">↓ Workflow Trigger</div>
+              <div class="crm-step">
+                <div class="crm-step-header">3. Welcome Email Series</div>
+                <div class="crm-step-body">30-day onboarding sequence</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-box callout-muted animate-in">
+          <h4>Why not Salesforce?</h4>
+          <p>Salesforce Nonprofit Cloud is $36–$100/user/month, requires certified admins, and has a steeper learning curve. For FGI's scale, <strong>HubSpot delivers equivalent functionality at a fraction of the cost</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">06</span>
+          <h2 class="section-title">Module Implementation</h2>
+          <p class="section-desc">Detailed plan for each of the seven functional domains.</p>
+        </div>
+
+        <!-- TABS -->
+        <div class="module-tabs animate-in">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="website">Website</button>
+            <button class="tab-btn" data-tab="membership">Membership</button>
+            <button class="tab-btn" data-tab="portal">Portal</button>
+            <button class="tab-btn" data-tab="events">Events</button>
+            <button class="tab-btn" data-tab="student">Student</button>
+            <button class="tab-btn" data-tab="governance">Governance</button>
+            <button class="tab-btn" data-tab="analytics">Analytics</button>
+          </div>
+
+          <!-- WEBSITE TAB -->
+          <div class="tab-content active" id="tab-website">
+            <h3>Public Website — 15 Pages</h3>
+            <div class="pages-grid">
+              <div class="page-card"><strong>Home</strong><br/>Hero video, events, news, membership CTA</div>
+              <div class="page-card"><strong>About FGI</strong><br/>Mission history, timeline, impact</div>
+              <div class="page-card"><strong>Mission & Impact</strong><br/>Annual highlights, infographics</div>
+              <div class="page-card"><strong>Leadership</strong><br/>Photo grid, bios, committees</div>
+              <div class="page-card"><strong>Membership</strong><br/>Tier comparison, benefits, apply</div>
+              <div class="page-card"><strong>Events</strong><br/>Calendar + list view, archives</div>
+              <div class="page-card"><strong>News & Press</strong><br/>Blog feed, categories, search</div>
+              <div class="page-card"><strong>Awards</strong><br/>Descriptions, past winners, nominate</div>
+              <div class="page-card"><strong>Scholarships</strong><br/>Eligibility, apply, stories</div>
+              <div class="page-card"><strong>Education</strong><br/>Courses, webinars, resources</div>
+              <div class="page-card"><strong>Student Programs</strong><br/>Club directory, how to start</div>
+              <div class="page-card"><strong>Resources</strong><br/>Reports, publications (gated)</div>
+              <div class="page-card"><strong>Sponsors</strong><br/>Logo wall, tiers, inquiry form</div>
+              <div class="page-card"><strong>Contact</strong><br/>Form, locations, social links</div>
+              <div class="page-card"><strong>Regional</strong><br/>Unified directory with map</div>
+            </div>
+            <div class="design-approach">
+              <h4>Design Approach</h4>
+              <ul>
+                <li>Custom design system with FGI brand tokens as CSS custom properties</li>
+                <li>Micro-animations on scroll via Framer Motion</li>
+                <li>Magazine-style layouts reflecting fashion industry aesthetics</li>
+                <li>WCAG 2.1 AA accessibility with axe-core in CI pipeline</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- MEMBERSHIP TAB -->
+          <div class="tab-content" id="tab-membership">
+            <h3>Membership Management</h3>
+            <div class="workflow-visual">
+              <div class="wf-step"><span class="wf-num">1</span>Application<br/><small>Form + file upload</small></div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step"><span class="wf-num">2</span>Review<br/><small>HQ admin queue</small></div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step"><span class="wf-num">3</span>Decision<br/><small>Approve / Reject</small></div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step"><span class="wf-num">4</span>Payment<br/><small>Stripe checkout</small></div>
+              <div class="wf-arrow">→</div>
+              <div class="wf-step wf-step-final"><span class="wf-num">5</span>Active<br/><small>Welcome sequence</small></div>
+            </div>
+            <ul class="feature-bullets">
+              <li>Multi-step application form with document uploads</li>
+              <li>Admin approval queue with bulk actions</li>
+              <li>Configurable tiers — HQ admins add new tiers without developers</li>
+              <li>Renewal pipeline: 90/60/30/7-day reminders → auto-charge → grace → lapse</li>
+              <li>Full membership history log with timestamps and actors</li>
+            </ul>
+          </div>
+
+          <!-- PORTAL TAB -->
+          <div class="tab-content" id="tab-portal">
+            <h3>Member Portal — Role-Based Dashboards</h3>
+            <div class="table-scroll">
+              <table class="premium-table">
+                <thead>
+                  <tr><th>Widget</th><th>Student</th><th>Professional</th><th>Corporate</th><th>Board</th><th>HQ Admin</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Profile completion</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Upcoming events</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Renewal status</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Exclusive content</td><td>—</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Industry reports</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Committee tools</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Governance docs</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>System admin</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+                  <tr><td>Analytics dashboard</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+                  <tr><td>Member directory</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- EVENTS TAB -->
+          <div class="tab-content" id="tab-events">
+            <h3>Events & Registration</h3>
+            <ul class="feature-bullets">
+              <li><strong>Event creation:</strong> Rich text, multiple ticket types, sponsor slots, capacity limits</li>
+              <li><strong>Smart pricing:</strong> Middleware auto-detects membership → applies correct tier price</li>
+              <li><strong>Checkout upsell:</strong> Non-members see "Join FGI and save $X" with membership add-to-cart</li>
+              <li><strong>QR ticketing:</strong> PDF tickets with unique QR codes for check-in</li>
+              <li><strong>Attendance tracking:</strong> QR scan → record → post-event follow-up email</li>
+              <li><strong>Reporting:</strong> Per-event P&L, demographics, sponsor ROI</li>
+            </ul>
+          </div>
+
+          <!-- STUDENT TAB -->
+          <div class="tab-content" id="tab-student">
+            <h3>Student Club Platform</h3>
+            <ul class="feature-bullets">
+              <li><strong>School application:</strong> Faculty advisor submits registration with institution details</li>
+              <li><strong>Club dashboard:</strong> Student officers manage events, communications, roster</li>
+              <li><strong>Graduation trigger:</strong> Auto email series offering professional tier at discounted rate</li>
+              <li><strong>Mentorship matching:</strong> Students browse professionals who opted in as mentors</li>
+            </ul>
+          </div>
+
+          <!-- GOVERNANCE TAB -->
+          <div class="tab-content" id="tab-governance">
+            <h3>Governance & Leadership Portal</h3>
+            <ul class="feature-bullets">
+              <li><strong>Document repository:</strong> Version-controlled policies, manuals, templates, branding</li>
+              <li><strong>Submission workflows:</strong> Regional directors submit → HQ reviews → approves/returns</li>
+              <li><strong>Deadline tracker:</strong> Calendar with status indicators (submitted, overdue, pending)</li>
+              <li><strong>Compliance dashboard:</strong> At-a-glance regional status, outstanding items, escalation alerts</li>
+            </ul>
+          </div>
+
+          <!-- ANALYTICS TAB -->
+          <div class="tab-content" id="tab-analytics">
+            <h3>Communications & Analytics</h3>
+            <div class="table-scroll">
+              <table class="premium-table">
+                <thead><tr><th>Dashboard</th><th>Audience</th><th>Key Metrics</th></tr></thead>
+                <tbody>
+                  <tr><td>Executive</td><td>CEO, Board</td><td>Total members, revenue, YoY growth, retention</td></tr>
+                  <tr><td>Membership</td><td>HQ Admin</td><td>Apps, approvals, renewals, lapses, tier distribution</td></tr>
+                  <tr><td>Events</td><td>Events Team</td><td>Registrations, attendance, revenue, sponsor ROI</td></tr>
+                  <tr><td>Regional</td><td>Regional Directors</td><td>Membership count, participation, compliance</td></tr>
+                  <tr><td>Student</td><td>Student Programs</td><td>Club count, transitions, mentor matches</td></tr>
+                  <tr><td>Financial</td><td>Finance/Board</td><td>Revenue, MRR, payment failures, outstanding invoices</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">07</span>
+          <h2 class="section-title">Development Timeline</h2>
+          <p class="section-desc">12 months, 6 phases — from discovery to go-live.</p>
+        </div>
+
+        <div class="timeline animate-in">
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">1</span>
+              <span class="phase-months">Months 1–2</span>
+            </div>
+            <div class="phase-content">
+              <h3>Discovery & Design</h3>
+              <ul>
+                <li>Stakeholder interviews (CEO, board, regional directors)</li>
+                <li>Information architecture, sitemap & user flows</li>
+                <li>UX wireframes for all pages & portals</li>
+                <li>Visual design — 3 homepage concepts + key page mockups</li>
+                <li>Technical architecture document finalized</li>
+              </ul>
+              <div class="phase-milestone">📌 Milestone: Design Approval</div>
+            </div>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">2</span>
+              <span class="phase-months">Months 3–4</span>
+            </div>
+            <div class="phase-content">
+              <h3>Core Platform</h3>
+              <ul>
+                <li>Project scaffolding (Next.js, NestJS, Strapi, DB)</li>
+                <li>Authentication & RBAC system</li>
+                <li>Database schema & Prisma migrations</li>
+                <li>CMS setup (Strapi collections, roles, media)</li>
+                <li>Design system implementation</li>
+                <li>CI/CD pipeline & staging environment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">3</span>
+              <span class="phase-months">Months 5–6</span>
+            </div>
+            <div class="phase-content">
+              <h3>Membership & Portal</h3>
+              <ul>
+                <li>Application & approval workflows</li>
+                <li>Stripe integration (payments, subscriptions)</li>
+                <li>Member portal (dashboard, profile, renewals)</li>
+                <li>Member directory (Elasticsearch, privacy controls)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">4</span>
+              <span class="phase-months">Months 7–8</span>
+            </div>
+            <div class="phase-content">
+              <h3>Events & Student Platform</h3>
+              <ul>
+                <li>Event creation & management (admin)</li>
+                <li>Registration, ticketing & smart pricing</li>
+                <li>Student club registration & management</li>
+                <li>Student-to-professional transition automation</li>
+                <li>Attendance tracking & event reporting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">5</span>
+              <span class="phase-months">Months 9–10</span>
+            </div>
+            <div class="phase-content">
+              <h3>Governance & Communications</h3>
+              <ul>
+                <li>Governance document repository</li>
+                <li>Submission workflows & compliance tracking</li>
+                <li>HubSpot CRM integration & email segmentation</li>
+                <li>Newsletter templates & automation workflows</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-marker">
+              <span class="phase-num">6</span>
+              <span class="phase-months">Months 11–12</span>
+            </div>
+            <div class="phase-content">
+              <h3>Analytics, QA & Launch</h3>
+              <ul>
+                <li>Metabase dashboards (6 views)</li>
+                <li>Security audit & penetration testing</li>
+                <li>Accessibility audit (WCAG 2.1 AA)</li>
+                <li>Performance optimization & load testing</li>
+                <li>User acceptance testing (UAT)</li>
+                <li>Staff training (7 sessions)</li>
+                <li>Data migration & go-live</li>
+              </ul>
+              <div class="phase-milestone">🚀 Milestone: Go-Live</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">08</span>
+          <h2 class="section-title">Project Team</h2>
+          <p class="section-desc">8.5 dedicated professionals across 12 months.</p>
+        </div>
+
+        <div class="team-grid animate-in">
+          <div class="team-card">
+            <div class="team-role-icon">📋</div>
+            <h4>Project Manager</h4>
+            <span class="team-count">1</span>
+            <p>Timeline, budget, stakeholder communication, risk management</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">🎨</div>
+            <h4>UX/UI Designer</h4>
+            <span class="team-count">1</span>
+            <p>Research, wireframes, visual design, design system, accessibility</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">💻</div>
+            <h4>Sr. Front-End Dev</h4>
+            <span class="team-count">1</span>
+            <p>Next.js, React components, design system implementation</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">💻</div>
+            <h4>Front-End Dev</h4>
+            <span class="team-count">1</span>
+            <p>Portal dashboards, forms, member directory UI</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">⚙️</div>
+            <h4>Sr. Back-End Dev</h4>
+            <span class="team-count">1</span>
+            <p>NestJS API, database architecture, auth, payments</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">⚙️</div>
+            <h4>Back-End Dev</h4>
+            <span class="team-count">1</span>
+            <p>Events, student platform, governance workflows</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">🔌</div>
+            <h4>CMS / Integration</h4>
+            <span class="team-count">1</span>
+            <p>Strapi, HubSpot, Elasticsearch, data migration</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">🧪</div>
+            <h4>QA Engineer</h4>
+            <span class="team-count">1</span>
+            <p>Test planning, automated testing, security & accessibility audits</p>
+          </div>
+          <div class="team-card">
+            <div class="team-role-icon">☁️</div>
+            <h4>DevOps Engineer</h4>
+            <span class="team-count">0.5</span>
+            <p>AWS infrastructure, CI/CD, monitoring, deployment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINING -->
+    <section id="training" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">09</span>
+          <h2 class="section-title">Training Plan</h2>
+          <p class="section-desc">7 tailored sessions plus ongoing resources.</p>
+        </div>
+
+        <div class="table-wrapper animate-in">
+          <div class="table-scroll">
+            <table class="premium-table">
+              <thead>
+                <tr><th>Session</th><th>Audience</th><th>Duration</th><th>Topics</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CMS Content</td><td>HQ editors, regional directors</td><td>4 hrs</td><td>Pages, media, publishing workflows</td></tr>
+                <tr><td>Membership Admin</td><td>HQ membership admin</td><td>4 hrs</td><td>Applications, tiers, payments, reports</td></tr>
+                <tr><td>Events</td><td>Events team</td><td>3 hrs</td><td>Events, pricing, tickets, sponsors</td></tr>
+                <tr><td>Analytics</td><td>CEO, board, regional</td><td>2 hrs</td><td>Dashboards, reports, data export</td></tr>
+                <tr><td>Student Clubs</td><td>Student programs coord.</td><td>2 hrs</td><td>Approvals, advisors, transitions</td></tr>
+                <tr><td>Governance</td><td>Regional directors, board</td><td>2 hrs</td><td>Documents, submissions, compliance</td></tr>
+                <tr><td>System Admin</td><td>HQ IT admin</td><td>3 hrs</td><td>Users, RBAC, API keys, monitoring</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="deliverables-grid animate-in">
+          <div class="deliverable"><span>📹</span> Video recordings of all sessions</div>
+          <div class="deliverable"><span>📖</span> Written guides with screenshots</div>
+          <div class="deliverable"><span>📄</span> Quick-reference cards (1-page PDFs)</div>
+          <div class="deliverable"><span>🧪</span> Sandbox environment for practice</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">10</span>
+          <h2 class="section-title">Ongoing Support & Maintenance</h2>
+          <p class="section-desc">99.9% SLA with tiered response times.</p>
+        </div>
+
+        <div class="support-tiers animate-in">
+          <div class="support-tier tier-critical">
+            <div class="tier-badge">Critical</div>
+            <h4>Site Down</h4>
+            <div class="tier-time">1 hour</div>
+            <p>24/7 • Immediate incident response</p>
+          </div>
+          <div class="support-tier tier-high">
+            <div class="tier-badge">High</div>
+            <h4>Feature Broken</h4>
+            <div class="tier-time">4 hours</div>
+            <p>Business hours • Bug diagnosis & fix</p>
+          </div>
+          <div class="support-tier tier-medium">
+            <div class="tier-badge">Medium</div>
+            <h4>Minor Issue</h4>
+            <div class="tier-time">1 day</div>
+            <p>Business hours • Non-blocking fixes</p>
+          </div>
+          <div class="support-tier tier-low">
+            <div class="tier-badge">Low</div>
+            <h4>Enhancement</h4>
+            <div class="tier-time">3 days</div>
+            <p>Business hours • Scoping & backlog</p>
+          </div>
+        </div>
+
+        <div class="maintenance-list animate-in">
+          <h3 class="subsection-title">Monthly Maintenance Includes</h3>
+          <div class="maint-grid">
+            <div class="maint-item">🔒 Security updates & dependency patching</div>
+            <div class="maint-item">📈 99.9% SLA with automated alerting</div>
+            <div class="maint-item">💾 Daily backups with 30-day retention</div>
+            <div class="maint-item">⚡ Monthly performance reports</div>
+            <div class="maint-item">🔄 CMS & plugin updates</div>
+            <div class="maint-item">🔐 Auto SSL certificate renewal</div>
+            <div class="maint-item">🕐 10 hrs/month included support</div>
+            <div class="maint-item">🧪 Annual pentest & accessibility re-audit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COST -->
+    <section id="cost" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">11</span>
+          <h2 class="section-title">Cost Proposal</h2>
+          <p class="section-desc">Transparent pricing with no hidden fees.</p>
+        </div>
+
+        <div class="cost-summary animate-in">
+          <div class="cost-hero-card">
+            <span class="cost-label">Total Implementation</span>
+            <span class="cost-amount" data-count="245000">$245,000</span>
+            <span class="cost-sub">12-month development</span>
+          </div>
+          <div class="cost-hero-card cost-annual">
+            <span class="cost-label">Annual Maintenance</span>
+            <span class="cost-amount" data-count="47900">$47,900</span>
+            <span class="cost-sub">Hosting + Support</span>
+          </div>
+        </div>
+
+        <!-- IMPLEMENTATION BREAKDOWN -->
+        <div class="table-wrapper animate-in">
+          <h3 class="subsection-title">Implementation Breakdown</h3>
+          <table class="premium-table">
+            <thead><tr><th>Phase</th><th>Duration</th><th>Cost (USD)</th></tr></thead>
+            <tbody>
+              <tr><td>Phase 1: Discovery & Design</td><td>2 months</td><td>$28,000</td></tr>
+              <tr><td>Phase 2: Core Platform</td><td>2 months</td><td>$42,000</td></tr>
+              <tr><td>Phase 3: Membership & Portal</td><td>2 months</td><td>$48,000</td></tr>
+              <tr><td>Phase 4: Events & Student Platform</td><td>2 months</td><td>$44,000</td></tr>
+              <tr><td>Phase 5: Governance & Communications</td><td>2 months</td><td>$38,000</td></tr>
+              <tr><td>Phase 6: Analytics, QA & Launch</td><td>2 months</td><td>$32,000</td></tr>
+              <tr class="row-subtotal"><td><strong>Subtotal: Development</strong></td><td><strong>12 months</strong></td><td><strong>$232,000</strong></td></tr>
+              <tr><td>Data Migration</td><td>—</td><td>$8,000</td></tr>
+              <tr><td>Training (7 sessions)</td><td>—</td><td>$5,000</td></tr>
+              <tr class="row-total"><td><strong>Total Implementation</strong></td><td></td><td><strong>$245,000</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ANNUAL BREAKDOWN -->
+        <div class="table-wrapper animate-in">
+          <h3 class="subsection-title">Annual Maintenance & Hosting</h3>
+          <table class="premium-table">
+            <thead><tr><th>Item</th><th>Annual Cost (USD)</th></tr></thead>
+            <tbody>
+              <tr><td>AWS Infrastructure</td><td>$9,600</td></tr>
+              <tr><td>Cloudinary (Media CDN)</td><td>$2,700</td></tr>
+              <tr><td>Elasticsearch (OpenSearch)</td><td>$3,600</td></tr>
+              <tr><td>HubSpot CRM (Nonprofit)</td><td>$5,400</td></tr>
+              <tr><td>Sentry (Error Monitoring)</td><td>$1,200</td></tr>
+              <tr><td>Domain & SSL</td><td>$200</td></tr>
+              <tr><td>Monitoring & Security Tools</td><td>$1,200</td></tr>
+              <tr class="row-subtotal"><td><strong>Subtotal: Hosting & Services</strong></td><td><strong>$23,900</strong></td></tr>
+              <tr><td>Support & Maintenance (120 hrs/yr)</td><td>$24,000</td></tr>
+              <tr class="row-total"><td><strong>Total Annual Cost</strong></td><td><strong>$47,900</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box animate-in">
+          <h4>Cost Notes</h4>
+          <ul>
+            <li>All prices are estimates, finalized after the Discovery phase.</li>
+            <li>Stripe transaction fees (2.9% + $0.30) are pass-through, not included above.</li>
+            <li>HubSpot pricing assumes 40% nonprofit discount.</li>
+            <li>10 monthly support hours can be banked up to 30 hours.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security" class="section section-alt">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">12</span>
+          <h2 class="section-title">Security & Compliance</h2>
+          <p class="section-desc">Enterprise-grade security with GDPR, PCI, and ADA compliance.</p>
+        </div>
+
+        <div class="security-grid animate-in">
+          <div class="security-item">
+            <div class="sec-icon">🔐</div>
+            <h4>Encryption</h4>
+            <p>AES-256 at rest, TLS 1.3 in transit</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🛡️</div>
+            <h4>Authentication</h4>
+            <p>NextAuth.js, bcrypt, MFA support</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🔑</div>
+            <h4>Authorization</h4>
+            <p>JWT-based RBAC, NestJS guards</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">💳</div>
+            <h4>PCI Compliance</h4>
+            <p>Stripe Elements — card data never touches FGI servers</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🇪🇺</div>
+            <h4>GDPR</h4>
+            <p>Consent management, data export, right to deletion</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🧱</div>
+            <h4>WAF & DDoS</h4>
+            <p>AWS WAF (OWASP Top 10) + Shield Standard</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🗝️</div>
+            <h4>Secrets</h4>
+            <p>AWS Secrets Manager for API keys & credentials</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🔍</div>
+            <h4>Scanning</h4>
+            <p>Dependabot + Snyk automated vulnerability scanning</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🧪</div>
+            <h4>Penetration Test</h4>
+            <p>Annual third-party pentest</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">💾</div>
+            <h4>Backup</h4>
+            <p>Daily automated, 30-day retention, tested recovery</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">📝</div>
+            <h4>Audit Logging</h4>
+            <p>All admin actions with actor, timestamp, change detail</p>
+          </div>
+          <div class="security-item">
+            <div class="sec-icon">🍪</div>
+            <h4>Privacy</h4>
+            <p>Cookie consent, profile privacy settings, DPAs with vendors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why-us" class="section">
+      <div class="container">
+        <div class="section-header animate-in">
+          <span class="section-number">13</span>
+          <h2 class="section-title">Why DynamicFlow</h2>
+          <p class="section-desc">The right partner for FGI's digital transformation.</p>
+        </div>
+
+        <div class="why-grid animate-in">
+          <div class="why-card">
+            <span class="why-num">01</span>
+            <h4>Full-Stack TypeScript</h4>
+            <p>One language, one team, from database to UI. No translation gaps between front-end and back-end.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">02</span>
+            <h4>Nonprofit Expertise</h4>
+            <p>We understand tiered memberships, board governance, volunteer management, and limited IT budgets.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">03</span>
+            <h4>Fashion Industry Fit</h4>
+            <p>For FGI, the website IS the brand. We design to fashion industry standards, not generic corporate templates.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">04</span>
+            <h4>Future-Proof Architecture</h4>
+            <p>Headless approach means FGI can add a mobile app or redesign the front-end without rebuilding the back-end.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">05</span>
+            <h4>Transparent Process</h4>
+            <p>Bi-weekly demos, shared project board, dedicated Slack channel, and no surprises on timeline or budget.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">06</span>
+            <h4>Cost-Effective</h4>
+            <p>Open-source stack (Strapi, Metabase, NestJS) eliminates recurring license fees enterprise CMS platforms charge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="brand-mark">DF</span>
+            <span class="footer-name">DynamicFlow Digital Solutions</span>
+            <p class="footer-tagline">Building Digital Ecosystems for Impact Organizations</p>
+          </div>
+          <div class="footer-validity">
+            <p>This proposal is valid for <strong>90 days</strong> from the date of submission.</p>
+            <p>We welcome the opportunity to present this proposal in person.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 DynamicFlow Digital Solutions. Prepared for Fashion Group International.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

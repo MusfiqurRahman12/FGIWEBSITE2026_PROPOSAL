@@ -15,7 +15,25 @@
   <!-- ===== LOGIN OVERLAY ===== -->
   <div id="loginOverlay" class="login-overlay" data-html2canvas-ignore="true">
     <div class="login-bg-aurora"></div>
+
+    <!-- Floating Animated Orbs -->
+    <div class="login-orbs" id="loginOrbs">
+      <div class="login-orb orb-1"></div>
+      <div class="login-orb orb-2"></div>
+      <div class="login-orb orb-3"></div>
+      <div class="login-orb orb-4"></div>
+      <div class="login-orb orb-5"></div>
+      <div class="login-orb orb-6"></div>
+    </div>
+
+    <!-- Mouse-reactive glow -->
+    <div class="login-mouse-glow" id="loginMouseGlow"></div>
+
     <div class="login-card-wrapper">
+      <!-- Pulsing ring around card -->
+      <div class="login-pulse-ring"></div>
+      <div class="login-pulse-ring ring-delay"></div>
+
       <div class="login-card">
         <div class="login-header">
           <img src="Dynamicflow.png" alt="Dynamicflow Logo" class="login-logo">
@@ -687,14 +705,14 @@
         <div class="section-header animate-in">
           <span class="section-number">07</span>
           <h2 class="section-title">Development Timeline</h2>
-          <p class="section-desc">12 months, 6 phases — from discovery to go-live.</p>
+          <p class="section-desc">11 months, 6 phases — from discovery to go-live.</p>
         </div>
 
         <div class="timeline animate-in">
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">1</span>
-              <span class="phase-months">Months 1–2</span>
+              <span class="phase-months">Months 1–1.5</span>
             </div>
             <div class="phase-content">
               <h3>Discovery & Design</h3>
@@ -712,7 +730,7 @@
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">2</span>
-              <span class="phase-months">Months 3–4</span>
+              <span class="phase-months">Months 1.5–3</span>
             </div>
             <div class="phase-content">
               <h3>Core Platform</h3>
@@ -730,7 +748,7 @@
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">3</span>
-              <span class="phase-months">Months 5–6</span>
+              <span class="phase-months">Months 3–5</span>
             </div>
             <div class="phase-content">
               <h3>Membership & Portal</h3>
@@ -746,7 +764,7 @@
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">4</span>
-              <span class="phase-months">Months 7–8</span>
+              <span class="phase-months">Months 5–7</span>
             </div>
             <div class="phase-content">
               <h3>Events & Student Platform</h3>
@@ -763,7 +781,7 @@
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">5</span>
-              <span class="phase-months">Months 9–10</span>
+              <span class="phase-months">Months 7–9</span>
             </div>
             <div class="phase-content">
               <h3>Governance & Communications</h3>
@@ -779,7 +797,7 @@
           <div class="timeline-phase">
             <div class="phase-marker">
               <span class="phase-num">6</span>
-              <span class="phase-months">Months 11–12</span>
+              <span class="phase-months">Months 9–11</span>
             </div>
             <div class="phase-content">
               <h3>Analytics, QA & Launch</h3>
@@ -796,6 +814,14 @@
             </div>
           </div>
         </div>
+
+        <!-- Project Initiation Note -->
+        <div class="callout-box animate-in" style="margin-top: 40px;">
+          <h4>Notice of Project Initiation</h4>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+            <strong>Kick-Off Preparation:</strong> A minimum lead time of <strong>two (2) weeks</strong> is required post-contract execution. This duration allows us to finalize team resource allocation, provision local/staging environments, and prepare initial materials to ensure a successful and structured project kick-off.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -805,7 +831,7 @@
         <div class="section-header animate-in">
           <span class="section-number">08</span>
           <h2 class="section-title">Project Team</h2>
-          <p class="section-desc">8.5 dedicated professionals across 12 months.</p>
+          <p class="section-desc">8.5 dedicated professionals across 11 months.</p>
         </div>
 
         <div class="team-grid animate-in">
@@ -968,8 +994,8 @@
         <div class="cost-summary animate-in">
           <div class="cost-hero-card">
             <span class="cost-label">Total Implementation</span>
-            <span class="cost-amount" data-count="245000">$245,000</span>
-            <span class="cost-sub">12-month development</span>
+            <span class="cost-amount" data-count="242500">$242,500</span>
+            <span class="cost-sub">11-month development</span>
           </div>
           <div class="cost-hero-card cost-annual">
             <span class="cost-label">Annual Maintenance</span>
@@ -984,16 +1010,16 @@
           <table class="premium-table">
             <thead><tr><th>Phase</th><th>Duration</th><th>Cost (USD)</th></tr></thead>
             <tbody>
-              <tr><td>Phase 1: Discovery & Design</td><td>2 months</td><td>$28,000</td></tr>
-              <tr><td>Phase 2: Core Platform</td><td>2 months</td><td>$42,000</td></tr>
+              <tr><td>Phase 1: Discovery & Design</td><td>1.5 months</td><td>$27,000</td></tr>
+              <tr><td>Phase 2: Core Platform</td><td>1.5 months</td><td>$41,500</td></tr>
               <tr><td>Phase 3: Membership & Portal</td><td>2 months</td><td>$48,000</td></tr>
               <tr><td>Phase 4: Events & Student Platform</td><td>2 months</td><td>$44,000</td></tr>
-              <tr><td>Phase 5: Governance & Communications</td><td>2 months</td><td>$38,000</td></tr>
+              <tr><td>Phase 5: Governance & Communications</td><td>2 months</td><td>$37,000</td></tr>
               <tr><td>Phase 6: Analytics, QA & Launch</td><td>2 months</td><td>$32,000</td></tr>
-              <tr class="row-subtotal"><td><strong>Subtotal: Development</strong></td><td><strong>12 months</strong></td><td><strong>$232,000</strong></td></tr>
+              <tr class="row-subtotal"><td><strong>Subtotal: Development</strong></td><td><strong>11 months</strong></td><td><strong>$229,500</strong></td></tr>
               <tr><td>Data Migration</td><td>—</td><td>$8,000</td></tr>
               <tr><td>Training (7 sessions)</td><td>—</td><td>$5,000</td></tr>
-              <tr class="row-total"><td><strong>Total Implementation</strong></td><td></td><td><strong>$245,000</strong></td></tr>
+              <tr class="row-total"><td><strong>Total Implementation</strong></td><td></td><td><strong>$242,500</strong></td></tr>
             </tbody>
           </table>
         </div>
@@ -1019,12 +1045,13 @@
         </div>
 
         <div class="callout-box animate-in">
-          <h4>Cost Notes</h4>
+          <h4>Cost Notes & Hosting Clarifications</h4>
           <ul>
             <li>All prices are estimates, finalized after the Discovery phase.</li>
-            <li>Stripe transaction fees (2.9% + $0.30) are pass-through, not included above.</li>
-            <li>HubSpot pricing assumes 40% nonprofit discount.</li>
-            <li>10 monthly support hours can be banked up to 30 hours.</li>
+            <li><strong>Hosting & Services ($23,900/yr):</strong> These are direct utility and software licensing fees paid to infrastructure providers (AWS, HubSpot, Cloudinary, Sentry, domain registry) to keep the application live and operational. These are standard, pass-through operational expenses and contain no service markup from our agency.</li>
+            <li><strong>Support & Maintenance ($24,000/yr):</strong> This covers monthly security updates, backup audits, and 120 support hours per year (10 monthly hours, bankable up to 30 hours) provided by our team.</li>
+            <li>Stripe transaction fees (2.9% + $0.30) are pass-through merchant charges and not included above.</li>
+            <li>HubSpot pricing assumes a 40% nonprofit discount.</li>
           </ul>
         </div>
       </div>

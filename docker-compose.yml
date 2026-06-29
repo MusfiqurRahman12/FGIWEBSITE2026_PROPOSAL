@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: fgi_proposal_web
+    ports:
+      - "8085:80"
+    restart: unless-stopped

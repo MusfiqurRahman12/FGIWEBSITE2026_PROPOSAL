@@ -182,6 +182,9 @@ function initLogin() {
   const errorMsg = document.getElementById('loginError');
   const card = document.querySelector('.login-card');
 
+  // Initialize login page animations
+  initLoginAnimations();
+
   // Check sessionStorage
   if (sessionStorage.getItem('fgi_proposal_authenticated') === 'true') {
     if (overlay) overlay.style.display = 'none';
@@ -232,6 +235,7 @@ function revealProposal() {
   setStaggerIndices();
   initLogout();
   initIdleTimer();
+  initMouseEffects();
 }
 
 /* --- LOGOUT & SESSION TIMEOUT LOGIC --- */
@@ -313,5 +317,241 @@ function removeIdleListeners() {
     });
     delete window.idleResetTimer;
     delete window.idleEvents;
+  }
+}
+
+/* ============================================
+   MOUSE-INTERACTIVE ANIMATIONS
+   ============================================ */
+function initMouseEffects() {
+  // Skip on touch-only devices
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  // --- 1. CURSOR GLOW SPOTLIGHT ---
+  const glow = document.createElement('div');
+  glow.id = 'cursorGlow';
+  glow.style.cssText = `
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.02) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    will-change: left, top;
+    mix-blend-mode: screen;
+  `;
+  document.body.appendChild(glow);
+
+  let glowX = 0, glowY = 0, currentX = 0, currentY = 0;
+  let glowVisible = false;
+
+  document.addEventListener('mousemove', (e) => {
+    glowX = e.clientX;
+    glowY = e.clientY;
+    if (!glowVisible) {
+      glowVisible = true;
+      glow.style.opacity = '1';
+    }
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    glowVisible = false;
+    glow.style.opacity = '0';
+  });
+
+  // Smooth follow via requestAnimationFrame
+  function animateGlow() {
+    currentX += (glowX - currentX) * 0.12;
+    currentY += (glowY - currentY) * 0.12;
+    glow.style.left = currentX + 'px';
+    glow.style.top = currentY + 'px';
+    requestAnimationFrame(animateGlow);
+  }
+  animateGlow();
+
+  // --- 2. CARD TILT EFFECT ---
+  const tiltTargets = document.querySelectorAll(
+    '.glass-card, .team-card, .security-item, .why-card, .support-tier, .cost-hero-card'
+  );
+
+  tiltTargets.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+      card.style.transition = 'transform 0.1s ease-out';
+
+      // Card inner highlight
+      const percentX = (x / rect.width) * 100;
+      const percentY = (y / rect.height) * 100;
+      card.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(201,168,76,0.06) 0%, transparent 60%), var(--bg-card)`;
+    }, { passive: true });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.4s ease';
+      card.style.background = '';
+    });
+  });
+
+  // --- 3. TRAILING SPARKLE PARTICLES ---
+  const sparkleContainer = document.createElement('div');
+  sparkleContainer.id = 'sparkleTrail';
+  sparkleContainer.style.cssText = `
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+  `;
+  document.body.appendChild(sparkleContainer);
+
+  let lastSparkleTime = 0;
+  const SPARKLE_INTERVAL = 60; // ms between sparkles
+
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastSparkleTime < SPARKLE_INTERVAL) return;
+    lastSparkleTime = now;
+
+    const sparkle = document.createElement('div');
+    const size = Math.random() * 4 + 2;
+    const offsetX = (Math.random() - 0.5) * 20;
+    const offsetY = (Math.random() - 0.5) * 20;
+    const opacity = Math.random() * 0.5 + 0.3;
+
+    sparkle.style.cssText = `
+      position: fixed;
+      left: ${e.clientX + offsetX}px;
+      top: ${e.clientY + offsetY}px;
+      width: ${size}px;
+      height: ${size}px;
+      background: radial-gradient(circle, rgba(201,168,76,${opacity}), transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle-fade 0.8s ease-out forwards;
+    `;
+    sparkleContainer.appendChild(sparkle);
+
+    // Clean up after animation
+    setTimeout(() => sparkle.remove(), 800);
+  }, { passive: true });
+
+  // Inject sparkle keyframes
+  if (!document.getElementById('sparkle-keyframes')) {
+    const style = document.createElement('style');
+    style.id = 'sparkle-keyframes';
+    style.textContent = `
+      @keyframes sparkle-fade {
+        0%   { transform: scale(1); opacity: 1; }
+        50%  { transform: scale(1.8); opacity: 0.5; }
+        100% { transform: scale(0); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // --- 4. MAGNETIC HOVER ON SECTION NUMBERS ---
+  const sectionNums = document.querySelectorAll('.section-number');
+  sectionNums.forEach((num) => {
+    num.addEventListener('mousemove', (e) => {
+      const rect = num.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      num.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.15)`;
+      num.style.transition = 'transform 0.15s ease-out';
+    }, { passive: true });
+
+    num.addEventListener('mouseleave', () => {
+      num.style.transform = '';
+      num.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
+  });
+}
+
+/* ============================================
+   LOGIN PAGE ANIMATIONS
+   ============================================ */
+function initLoginAnimations() {
+  const overlay = document.getElementById('loginOverlay');
+  const mouseGlow = document.getElementById('loginMouseGlow');
+  const loginCard = document.querySelector('.login-card');
+
+  if (!overlay || !mouseGlow) return;
+
+  // Skip mouse effects on touch-only devices
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  // --- Mouse-tracking glow on login overlay ---
+  let loginGlowX = 0, loginGlowY = 0;
+  let loginCurrentX = 0, loginCurrentY = 0;
+  let loginGlowActive = false;
+
+  overlay.addEventListener('mousemove', (e) => {
+    loginGlowX = e.clientX;
+    loginGlowY = e.clientY;
+    if (!loginGlowActive) {
+      loginGlowActive = true;
+      mouseGlow.style.opacity = '1';
+    }
+  }, { passive: true });
+
+  overlay.addEventListener('mouseleave', () => {
+    loginGlowActive = false;
+    mouseGlow.style.opacity = '0';
+  });
+
+  function animateLoginGlow() {
+    loginCurrentX += (loginGlowX - loginCurrentX) * 0.08;
+    loginCurrentY += (loginGlowY - loginCurrentY) * 0.08;
+    mouseGlow.style.left = loginCurrentX + 'px';
+    mouseGlow.style.top = loginCurrentY + 'px';
+    requestAnimationFrame(animateLoginGlow);
+  }
+  animateLoginGlow();
+
+  // --- 3D tilt on login card ---
+  if (loginCard) {
+    loginCard.addEventListener('mousemove', (e) => {
+      const rect = loginCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -3;
+      const rotateY = ((x - centerX) / centerX) * 3;
+
+      loginCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      loginCard.style.transition = 'transform 0.1s ease-out';
+
+      // Moving highlight inside the card
+      const percentX = (x / rect.width) * 100;
+      const percentY = (y / rect.height) * 100;
+      loginCard.style.boxShadow = `
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(201, 168, 76, 0.05),
+        inset 0 0 80px rgba(201, 168, 76, 0.02)
+      `;
+
+      // Update the ::before gradient dynamically via CSS variable
+      loginCard.style.setProperty('--glow-x', percentX + '%');
+      loginCard.style.setProperty('--glow-y', percentY + '%');
+    }, { passive: true });
+
+    loginCard.addEventListener('mouseleave', () => {
+      loginCard.style.transform = '';
+      loginCard.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      loginCard.style.boxShadow = '';
+    });
   }
 }

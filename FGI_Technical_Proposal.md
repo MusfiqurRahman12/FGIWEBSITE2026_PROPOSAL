@@ -491,21 +491,20 @@ Application --> Email Confirm --> Review Queue --> Approval/Rejection --> Paymen
 
 ## 7. Development Timeline
 
-### Phase Overview (12 Months Total)
+### Phase Overview (11 Months Total)
 
 ```
-Month  1-2    | Discovery, Design & Architecture
-Month  3-4    | Core Platform (Auth, DB, CMS, Base UI)
-Month  5-6    | Membership System & Member Portal
-Month  7-8    | Events, Payments & Student Platform
-Month  9-10   | Governance Portal & Communications
-Month 11      | Analytics, Integrations & QA
-Month 12      | UAT, Training & Launch
+Month 1–1.5   | Discovery, Design & Architecture
+Month 1.5–3   | Core Platform (Auth, DB, CMS, Base UI)
+Month 3–5     | Membership System & Member Portal
+Month 5–7     | Events, Payments & Student Platform
+Month 7–9     | Governance Portal & Communications
+Month 9–11    | Analytics, QA & Launch
 ```
 
 ### Detailed Phase Breakdown
 
-#### Phase 1: Discovery & Design (Months 1-2)
+#### Phase 1: Discovery & Design (Months 1–1.5)
 
 | Deliverable | Duration | Details |
 |---|---|---|
@@ -516,7 +515,7 @@ Month 12      | UAT, Training & Launch
 | Technical architecture doc | 1 week | Finalized stack, data model, deployment plan |
 | **Milestone:** Design approval | — | Stakeholder sign-off before development begins |
 
-#### Phase 2: Core Platform (Months 3-4)
+#### Phase 2: Core Platform (Months 1.5–3)
 
 | Deliverable | Duration |
 |---|---|
@@ -527,7 +526,7 @@ Month 12      | UAT, Training & Launch
 | Design system implementation (CSS, components) | 2 weeks |
 | CI/CD pipeline & staging environment | 1 week |
 
-#### Phase 3: Membership & Portal (Months 5-6)
+#### Phase 3: Membership & Portal (Months 3–5)
 
 | Deliverable | Duration |
 |---|---|
@@ -536,7 +535,7 @@ Month 12      | UAT, Training & Launch
 | Member portal (dashboard, profile, renewals) | 3 weeks |
 | Member directory (Elasticsearch, privacy controls) | 2 weeks |
 
-#### Phase 4: Events & Student Platform (Months 7-8)
+#### Phase 4: Events & Student Platform (Months 5–7)
 
 | Deliverable | Duration |
 |---|---|
@@ -546,7 +545,7 @@ Month 12      | UAT, Training & Launch
 | Student-to-professional transition automation | 1 week |
 | Attendance tracking & event reporting | 1 week |
 
-#### Phase 5: Governance & Communications (Months 9-10)
+#### Phase 5: Governance & Communications (Months 7–9)
 
 | Deliverable | Duration |
 |---|---|
@@ -555,7 +554,7 @@ Month 12      | UAT, Training & Launch
 | HubSpot CRM integration & email segmentation | 2 weeks |
 | Newsletter templates & automation workflows | 2 weeks |
 
-#### Phase 6: Analytics, QA & Launch (Months 11-12)
+#### Phase 6: Analytics, QA & Launch (Months 9–11)
 
 | Deliverable | Duration |
 |---|---|
@@ -567,6 +566,9 @@ Month 12      | UAT, Training & Launch
 | Staff training (7 sessions) | 1 week |
 | Data migration (existing members, events) | 1 week |
 | **Go-live** | 1 day |
+
+> **Notice of Project Initiation & Kick-Off Preparation:**
+> A minimum lead time of **two (2) weeks** is required post-contract execution. This duration allows us to finalize team resource allocation, provision local/staging environments, and prepare initial materials to ensure a successful and structured project kick-off.
 
 ---
 
@@ -584,7 +586,7 @@ Month 12      | UAT, Training & Launch
 | **QA Engineer** | 1 | Test planning, automated testing, accessibility & security audits |
 | **DevOps Engineer** | 0.5 | AWS infrastructure, CI/CD, monitoring, deployment |
 
-**Total team:** 8.5 FTEs across 12 months.
+**Total team:** 8.5 FTEs across 11 months.
 
 ---
 
@@ -646,16 +648,16 @@ Month 12      | UAT, Training & Launch
 
 | Phase | Duration | Cost (USD) |
 |---|---|---|
-| Phase 1: Discovery & Design | 2 months | $28,000 |
-| Phase 2: Core Platform | 2 months | $42,000 |
+| Phase 1: Discovery & Design | 1.5 months | $27,000 |
+| Phase 2: Core Platform | 1.5 months | $41,500 |
 | Phase 3: Membership & Portal | 2 months | $48,000 |
 | Phase 4: Events & Student Platform | 2 months | $44,000 |
-| Phase 5: Governance & Communications | 2 months | $38,000 |
+| Phase 5: Governance & Communications | 2 months | $37,000 |
 | Phase 6: Analytics, QA & Launch | 2 months | $32,000 |
-| **Subtotal: Development** | **12 months** | **$232,000** |
+| **Subtotal: Development** | **11 months** | **$229,500** |
 | Data Migration | — | $8,000 |
 | Training (7 sessions) | — | $5,000 |
-| **Total Implementation** | — | **$245,000** |
+| **Total Implementation** | — | **$242,500** |
 
 ### 11.2 Annual Maintenance & Hosting
 
@@ -674,9 +676,14 @@ Month 12      | UAT, Training & Launch
 | Ongoing Support & Maintenance (120 hrs/year) | $24,000 |
 | **Total Annual Cost** | **$47,900** |
 
-### 11.3 Cost Notes
+### 11.3 Cost Notes & Hosting Clarifications
 
-> **NOTE:** All prices are estimates and will be finalized after the Discovery phase. Stripe transaction fees are pass-through costs borne by FGI, not included in the above. HubSpot pricing assumes 40% nonprofit discount on Marketing Starter hub. The 10 included monthly support hours can be banked (up to 30 hours) or used for feature enhancements.
+> **NOTE:** All prices are estimates and will be finalized after the Discovery phase.
+>
+> * **Hosting & Services ($23,900/year):** These are direct utility and software licensing costs paid to third-party providers (AWS, HubSpot, Cloudinary, Sentry, domain registry, and security tools) to run the live application. These are standard, pass-through operational expenses required to keep the system online and contain no agency service markup.
+> * **Support & Maintenance ($24,000/year):** This represents our agency support fee, which covers routine security patching, backup audits, and 120 support hours per year (10 monthly hours, bankable up to 30 hours).
+> * **Merchant Fees:** Stripe transaction fees (2.9% + $0.30) are pass-through merchant charges and not included above.
+> * **HubSpot Discount:** HubSpot pricing assumes a 40% nonprofit discount on the Marketing Starter hub.
 
 ---
 

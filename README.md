@@ -51,8 +51,8 @@ python -m http.server 3000
 | **Stack** | Next.js 15 · NestJS 11 · Strapi 5 · PostgreSQL · Redis · Elasticsearch |
 | **CRM** | HubSpot (Nonprofit Edition) |
 | **Cloud** | AWS (ECS Fargate, RDS, S3, CloudFront) |
-| **Timeline** | 12 months, 6 phases |
-| **Implementation** | $245,000 |
+| **Timeline** | 11 months, 6 phases |
+| **Implementation** | $242,500 |
 | **Annual Maintenance** | $47,900 |
 
 ---

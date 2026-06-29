@@ -680,8 +680,8 @@ Month 9–11    | Analytics, QA & Launch
 
 > **NOTE:** All prices are estimates and will be finalized after the Discovery phase.
 >
-> * **Hosting & Services ($23,900/year):** These are direct utility and software licensing costs paid to third-party providers (AWS, HubSpot, Cloudinary, Sentry, domain registry, and security tools) to run the live application. These are standard, pass-through operational expenses required to keep the system online and contain no agency service markup.
-> * **Support & Maintenance ($24,000/year):** This represents our agency support fee, which covers routine security patching, backup audits, and 120 support hours per year (10 monthly hours, bankable up to 30 hours).
+> * **Hosting & Services ($23,900/year):** These are direct utility and software licensing costs paid to third-party providers (AWS, HubSpot, Cloudinary, Sentry, domain registry, and security tools) to run the live application during the post-development (post-launch) operational phase. These are standard, pass-through operational expenses required to keep the system online and contain no agency service markup.
+> * **Support & Maintenance ($24,000/year):** This represents our agency post-development (post-launch) support fee, which covers routine security patching, backup audits, and 120 support hours per year (10 monthly hours, bankable up to 30 hours).
 > * **Merchant Fees:** Stripe transaction fees (2.9% + $0.30) are pass-through merchant charges and not included above.
 > * **HubSpot Discount:** HubSpot pricing assumes a 40% nonprofit discount on the Marketing Starter hub.
 
